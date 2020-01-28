@@ -1,0 +1,11 @@
+[template]
+src  = "vsftpd.conf.tmpl"
+dest = "/etc/vsftpd/vsftpd.conf"
+keys = [
+    "/vsftpd/anonymous",
+    "/vsftpd/dirmessage",
+    "/vsftpd/root",
+    "/vsftpd/banner",
+    "/vsftpd/banner/file",
+    "/vsftpd/pasv/address"
+]

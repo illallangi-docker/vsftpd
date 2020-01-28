@@ -1,0 +1,31 @@
+listen=YES
+anonymous_enable={{ getv "/vsftpd/anonymous" "YES" }}
+dirmessage_enable={{ getv "/vsftpd/dirmessage" "YES" }}
+connect_from_port_20=YES
+secure_chroot_dir={{ getv "/vsftpd/chroot" "/var/run/vsftpd/empty"}}
+write_enable=NO
+seccomp_sandbox=NO
+hide_ids=YES
+pasv_enable=YES
+port_enable=YES
+anon_root={{ getv "/vsftpd/root" "/var/ftp" }}
+pasv_max_port=65515
+pasv_min_port=65500
+max_per_ip=2
+max_login_fails=2
+max_clients=50
+anon_max_rate=6250000
+ftpd_banner={{ getv "/vsftpd/banner" "illallangi/vsftpd dockerized vsftpd" }}
+banner_file={{ getv "/vsftpd/banner/file" "" }}
+pasv_address={{ getv "/vsftpd/pasv/address" "" }}
+
+listen_ipv6=NO
+local_enable=NO
+
+xferlog_enable=YES
+xferlog_std_format=NO
+log_ftp_protocol=YES
+vsftpd_log_file=/var/log/vsftpd.log
+xferlog_file=/var/log/xferlog
+background=NO
+syslog_enable=NO
